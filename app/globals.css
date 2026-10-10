@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, monospace;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+/*
+  Palette (5 colors):
+  paper  #F4F5F6 — background
+  mist   #E6E8EB — surfaces, image frames, borders
+  slate  #676C75 — secondary text
+  ink    #121417 — primary text & buttons
+  gold   #FFC72C — signature highlight (UCI gold)
+*/
+:root {
+  color-scheme: light;
+  --background: #f4f5f6;
+  --foreground: #121417;
+  --card: #e6e8eb;
+  --card-foreground: #121417;
+  --popover: #f4f5f6;
+  --popover-foreground: #121417;
+  --primary: #121417;
+  --primary-foreground: #f4f5f6;
+  --secondary: #e6e8eb;
+  --secondary-foreground: #121417;
+  --muted: #e6e8eb;
+  --muted-foreground: #676c75;
+  --accent: #ffc72c;
+  --accent-foreground: #121417;
+  --destructive: #c4302b;
+  --border: #dcdfe3;
+  --input: #dcdfe3;
+  --ring: #121417;
+  --radius: 0.375rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
