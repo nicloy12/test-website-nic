@@ -2,7 +2,7 @@
 // Everything on the home page (name, intro, about, contact, links) reads from here.
 
 export const site = {
-  name: 'Jordan Lee',
+  name: 'Nic Loyola',
   role: 'Product Designer',
   location: 'Irvine, California',
   availability: 'Open to full-time product design roles',
